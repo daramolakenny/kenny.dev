@@ -33,7 +33,7 @@ const Contact = () => {
                   Email
                 </p>
                 <a
-                  href="mailto:your-email@example.com"
+                  href="mailto:daramolakenny18@gmail.com"
                   className="mt-1 inline-block text-sm text-slate-600 transition hover:text-blue-600"
                 >
                   your-email@example.com
@@ -45,7 +45,7 @@ const Contact = () => {
                   GitHub
                 </p>
                 <a
-                  href="#"
+                  href="https://github.com/daramolakenny"
                   className="mt-1 inline-block text-sm text-slate-600 transition hover:text-blue-600"
                 >
                   GitHub Profile
@@ -57,7 +57,7 @@ const Contact = () => {
                   LinkedIn
                 </p>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/daramola-kehinde-8936b619b"
                   className="mt-1 inline-block text-sm text-slate-600 transition hover:text-blue-600"
                 >
                   LinkedIn Profile
@@ -79,7 +79,7 @@ const Contact = () => {
             </p>
 
             <form
-              action="mailto:your-email@example.com"
+              action="daramolakenny18@gmail.com"
               method="POST"
               encType="text/plain"
               className="mt-6 space-y-5"
