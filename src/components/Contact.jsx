@@ -1,6 +1,67 @@
 import React from 'react'
+import { useState } from 'react'
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const [status, setStatus] = useState('')
+  const [loading, setLoading] = useState(false)
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    setLoading(true)
+    setStatus('')
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: 'New message from Kenny.dev portfolio',
+        }),
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        setStatus('success')
+
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+        })
+      } else {
+        setStatus('error')
+      }
+    } catch (error) {
+      setStatus('error')
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <section
       id="contact"
@@ -79,9 +140,10 @@ const Contact = () => {
             </p>
 
             <form
-              action="daramolakenny18@gmail.com"
-              method="POST"
-              encType="text/plain"
+              onSubmit={handleSubmit}
+              // action="daramolakenny18@gmail.com"
+              // method="POST"
+              // encType="text/plain"
               className="mt-6 space-y-5"
             >
 
@@ -95,8 +157,11 @@ const Contact = () => {
 
                 <input
                   id="name"
-                  name="Name"
+                  name="name"
                   type="text"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   placeholder="Your name"
                   className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-600"
                 />
@@ -112,8 +177,11 @@ const Contact = () => {
 
                 <input
                   id="email"
-                  name="Email"
+                  name="email"
                   type="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   placeholder="your@email.com"
                   className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-600"
                 />
@@ -129,18 +197,30 @@ const Contact = () => {
 
                 <textarea
                   id="message"
-                  name="Message"
+                  name="message"
                   rows="5"
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="Tell me about your project..."
                   className="w-full resize-none rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-600"
                 />
               </div>
 
+              {/* Success Message */}
+              {status === 'success' && (
+                <div className="rounded-lg border border-green-200 bg-green-50 p-4">
+                  <p className="text-sm font-medium text-green-700">
+                    Message sent successfully! I'll get back to you soon.
+                  </p>
+                </div>
+              )}
+
               <button
                 type="submit"
+                disabled={loading}
                 className="w-full rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700"
               >
-                Send Message
+                 {loading ? 'Sending...' : 'Send Message'}
               </button>
 
             </form>
