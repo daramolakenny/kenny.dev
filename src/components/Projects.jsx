@@ -31,36 +31,37 @@ const Projects = () => {
           <div className="grid lg:grid-cols-2">
 
             {/* Project Preview */}
-            <div className="flex min-h-75 items-center justify-center bg-slate-900 p-6 sm:p-10">
+            <div className="flex min-h- items-center justify-center bg-slate-900 ">
+                <img src="uootes.jpeg" alt="" srcset="" className='h-full w-full'/>
 
-              <div className="w-full max-w-lg rounded-xl bg-white p-5 shadow-2xl sm:p-6">
+              {/* <div className="w-full max-w-lg rounded-xl bg-white p-5 shadow-2xl sm:p-6"> */}
 
                 {/* Browser Header */}
-                <div className="mb-5 flex items-center gap-2">
+                {/* <div className="mb-5 flex items-center gap-2">
                   <div className="h-3 w-3 rounded-full bg-slate-300" />
                   <div className="h-3 w-3 rounded-full bg-slate-300" />
                   <div className="h-3 w-3 rounded-full bg-slate-300" />
-                </div>
+                </div> */}
 
                 {/* Website Preview */}
-                <div className="space-y-4">
+                {/* <div className="space-y-4"> */}
 
-                  <div className="h-6 w-32 rounded bg-slate-200" />
+                  {/* <div className="h-6 w-32 rounded bg-slate-200" /> */}
 
-                  <div className="h-24 w-full rounded-lg bg-slate-100" />
+                  {/* <div className="h-24 w-full rounded-lg bg-slate-100" /> */}
 
-                  <div className="grid grid-cols-3 gap-3">
-                    <div className="h-16 rounded-lg bg-slate-100" />
-                    <div className="h-16 rounded-lg bg-slate-100" />
-                    <div className="h-16 rounded-lg bg-slate-100" />
-                  </div>
+                  {/* <div className="grid grid-cols-3 gap-3"> */}
+                    {/* <div className="h-16 rounded-lg bg-slate-100" /> */}
+                    {/* <div className="h-16 rounded-lg bg-slate-100" /> */}
+                    {/* <div className="h-16 rounded-lg bg-slate-100" /> */}
+                  {/* </div> */}
 
-                  <div className="h-3 w-4/5 rounded bg-slate-100" />
-                  <div className="h-3 w-3/5 rounded bg-slate-100" />
+                  {/* <div className="h-3 w-4/5 rounded bg-slate-100" /> */}
+                  {/* <div className="h-3 w-3/5 rounded bg-slate-100" /> */}
 
-                </div>
+                {/* </div> */}
 
-              </div>
+              {/* </div> */}
 
             </div>
 
@@ -168,11 +169,12 @@ const Projects = () => {
           <div className="grid lg:grid-cols-2">
 
             {/* Project Preview */}
-            <div className="flex min-h-75 items-center justify-center bg-slate-900 p-6 sm:p-10 lg:order-2">
+            <div className="flex min-h-75 items-center justify-center bg-slate-900  lg:order-2">
 
-              <div className="w-full max-w-lg rounded-xl bg-white p-5 shadow-2xl sm:p-6">
+              {/* <div className="w-full max-w-lg rounded-xl bg-white p-5 shadow-2xl sm:p-6"> */}
+                <img src="mosty.jpeg" alt="" srcset="" className='h-full w-full'/>
 
-                <div className="mb-5 flex items-center justify-between">
+                {/* <div className="mb-5 flex items-center justify-between">
                   <div className="h-6 w-28 rounded bg-slate-200" />
                   <div className="h-8 w-8 rounded-lg bg-blue-100" />
                 </div>
@@ -215,9 +217,9 @@ const Projects = () => {
                   <div className="h-3 w-full rounded bg-slate-100" />
                   <div className="h-3 w-4/5 rounded bg-slate-100" />
                   <div className="h-3 w-3/5 rounded bg-slate-100" />
-                </div>
+                </div> */}
 
-              </div>
+              {/* </div> */}
 
             </div>
 
@@ -307,9 +309,48 @@ const Projects = () => {
         </div>
 
         {/* Other Projects */}
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
 
           {/* E-Commerce */}
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:p-8">
+
+            <p className="text-sm font-semibold text-blue-600">
+              Frontend Project
+            </p>
+
+            <h3 className="mt-2 text-xl font-bold text-slate-900">
+              Food Recipe Interface
+            </h3>
+
+            <p className="mt-3 text-sm leading-6 text-slate-600">
+              A responsive food recipe interface built with React,
+              featuring product browsing, categories, search, and
+              a shopping experience.
+            </p>
+
+            <div className="mt-5 flex flex-wrap gap-2">
+              <span className="rounded-md bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-700">
+                React
+              </span>
+
+              <span className="rounded-md bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-700">
+                JavaScript
+              </span>
+
+              <span className="rounded-md bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-700">
+                Tailwind CSS
+              </span>
+            </div>
+
+            <a
+              href="#"
+              className="mt-6 inline-block text-sm font-semibold text-blue-600 hover:text-blue-700"
+            >
+              View Project →
+            </a>
+
+          </div>
+
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:p-8">
 
             <p className="text-sm font-semibold text-blue-600">

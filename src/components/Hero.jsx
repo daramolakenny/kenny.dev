@@ -213,7 +213,8 @@ const Hero = () => {
           {/* Left Side */}
           <div className="min-w-0 max-w-2xl">
 
-            <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-blue-600 sm:text-sm">
+            <p className="shimmer-text mb-3 text-xs font-semibold uppercase tracking-wider text-blue-600 sm:text-sm">
+              {/* shimmer-text font-extrabold text-3xl md:text-5xl lg:text-6xl leading-tight mb- */}
               Frontend Developer
             </p>
 
